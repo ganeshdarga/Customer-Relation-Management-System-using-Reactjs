@@ -2,9 +2,10 @@ import React from 'react'
 import { LiaIndustrySolid } from "react-icons/lia";
 import  { useEffect, useState } from 'react'
 import Axios from 'axios'
-import logo from './company.jpg'
+import logo from './adminimages/company.jpg'
 import { FaEdit } from "react-icons/fa";
 import { MdOutlineDelete } from "react-icons/md";
+
 
 
 

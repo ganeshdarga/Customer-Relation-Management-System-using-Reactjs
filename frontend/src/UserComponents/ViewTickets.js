@@ -3,8 +3,8 @@ import { useState,useEffect } from 'react'
 import Axios from 'axios'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import profile from './profile.jpg'
-import admin from './admin.jpg'
+import profile from './usercom_pictures/profile.jpg'
+import admin from './usercom_pictures/admin.jpg'
 
 const ViewTickets = () => {
 

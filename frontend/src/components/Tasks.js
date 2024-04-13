@@ -6,9 +6,9 @@ import Axios from 'axios'
 import { FaEdit } from "react-icons/fa";
 import { MdOutlineDelete } from "react-icons/md";
 import { BiTask } from "react-icons/bi";
-import ganesh from './ganesh.jpg'
-import ravi from './ravi.jpg';
-import vasanthi from './vasanthi.jpg'
+import ganesh from './adminimages/ganesh.jpg'
+import ravi from './adminimages/ravi.jpg';
+import vasanthi from './adminimages/vasanthi.jpg'
 
 
 

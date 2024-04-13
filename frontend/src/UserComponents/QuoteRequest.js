@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import { FcServices } from "react-icons/fc";
-import quote from './requestquote.jpg'
+import quote from './usercom_pictures/requestquote.jpg'
 
 const QuoteRequest = () => {
   const [serviseUser, setServiceUser] = useState("");

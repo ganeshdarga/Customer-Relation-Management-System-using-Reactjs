@@ -1,9 +1,14 @@
 import React from 'react'
-import ganesh from './ganesh.jpg'
-import vasanthi from './vasanthi.jpg'
-import ravi from './ravi.jpg'
+
+
+import ganesh from './adminimages/ganesh.jpg'
+import ravi from './adminimages/ravi.jpg';
+import vasanthi from './adminimages/vasanthi.jpg'
 import  { useEffect, useState } from 'react'
 import Axios from 'axios'
+import { FaIdeal } from "react-icons/fa";
+import { LuActivitySquare } from "react-icons/lu";
+
 
 const Activities = () => {
   const [view,setView]=useState(false)
@@ -97,6 +102,13 @@ const Activities = () => {
   }
   return (
     <div className='Activities-Main-container'>
+      <div className='company-logo'>
+    <div className='company-main'>
+    <div><LuActivitySquare  className="logo0" /></div>
+    <div style={{marginTop:"19px"}}><h5>Activities</h5></div>
+  </div>
+    </div>
+      
       <div className='h3-main'>
         <h3 onClick={addAct}>Add Activity</h3>
       </div>

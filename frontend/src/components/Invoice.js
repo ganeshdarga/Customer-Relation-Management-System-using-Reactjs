@@ -2,10 +2,21 @@ import React from 'react'
 import { LiaIndustrySolid } from "react-icons/lia";
 import  { useEffect, useState } from 'react'
 import Axios from 'axios'
-import logo from './company.jpg'
 import { FaEdit } from "react-icons/fa";
 import { MdOutlineDelete } from "react-icons/md";
 import { FaFileInvoiceDollar } from "react-icons/fa";
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import { IoIosAdd } from "react-icons/io";
+import { FaUser } from "react-icons/fa";
+import { MdDateRange } from "react-icons/md";
+import { GoBook } from "react-icons/go";
+import { TbCategory } from "react-icons/tb";
+
+
+
+
+
 
 
 const Invoice = () => {
@@ -119,17 +130,60 @@ const Invoice = () => {
 
   }
 
+  const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
+
   return (
     <div className='companies-container'>
+
     <div className='company-logo'>
       <div className='company-main'>
         <div><FaFileInvoiceDollar  className="logo0" /></div>
         <div><h5>Invoice</h5>Invoice list</div>
       </div>
+      <Nav style={{backgroundColor:"white", width:"100%" , marginLeft:"-2px"}} variant="pills" activeKey="1" onSelect={handleSelect}>
+      <NavDropdown className='invoice-nav' title={<span><FaUser style={{width:"29px",height:"24px"}} /> Users</span>}  id="nav-dropdown">
+        <NavDropdown.Item eventKey="4.1">
+        <input type='text' placeholder='Enter Customer Name' id='ganesh-checkbox'/>
+        </NavDropdown.Item>
+        <NavDropdown.Item eventKey="4.2">Ganesh</NavDropdown.Item>
+        <NavDropdown.Item eventKey="4.3">Vasanthi</NavDropdown.Item>
+        <NavDropdown.Item eventKey="4.4">Ravi</NavDropdown.Item>
+        <NavDropdown.Item eventKey="4.4">Nivas</NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item eventKey="4.4">Apply</NavDropdown.Item>
+      </NavDropdown>
+      <NavDropdown className='invoice-nav'  title={<span><MdDateRange style={{width:"29px",height:"24px"}}  />Select Date</span>}id="nav-dropdown">
+        <NavDropdown.Item eventKey="4.1">Toady</NavDropdown.Item>
+        <NavDropdown.Item eventKey="4.2">Yesterday</NavDropdown.Item>
+        <NavDropdown.Item eventKey="4.3">Last 7 days</NavDropdown.Item>
+        <NavDropdown.Item eventKey="4.3">This month</NavDropdown.Item>
+        <NavDropdown.Item eventKey="4.3">Last Month</NavDropdown.Item>
+
+      </NavDropdown>
+      <NavDropdown className='invoice-nav'  title={<span><GoBook  style={{width:"29px",height:"24px"}} />Select Status</span>}id="nav-dropdown">
+        <NavDropdown.Item eventKey="4.1">All Invoices</NavDropdown.Item>
+        <NavDropdown.Item eventKey="4.2">Paid</NavDropdown.Item>
+        <NavDropdown.Item eventKey="4.3">Overdue</NavDropdown.Item>
+        <NavDropdown.Item eventKey="4.3">Draft</NavDropdown.Item>
+        <NavDropdown.Item eventKey="4.3">Recurring</NavDropdown.Item>
+        <NavDropdown.Item eventKey="4.3">Cancelled</NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item eventKey="4.4">Apply</NavDropdown.Item>
+      </NavDropdown>
+      <NavDropdown className='invoice-nav'  title={<span><TbCategory style={{width:"29px",height:"24px"}}  />Select Category</span>} id="nav-dropdown">
+        <NavDropdown.Item eventKey="4.1">Advertising</NavDropdown.Item>
+        <NavDropdown.Item eventKey="4.2">Ecommerce</NavDropdown.Item>
+        <NavDropdown.Item eventKey="4.3">Marketing</NavDropdown.Item>
+        <NavDropdown.Item eventKey="4.3">Software</NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item eventKey="4.4">Apply</NavDropdown.Item>
+      </NavDropdown>
+    </Nav>
+    
       <div className='company-main2'>
         <h5>Invoice Details</h5>
         <hr></hr>
-        <button onClick={addinvoices}>Add New Invoice</button>
+        <button onClick={addinvoices}><IoIosAdd /> Add New Invoice</button>
       </div>
       <div className='company-main3'>
         <div className='company-names'>A/C number</div>

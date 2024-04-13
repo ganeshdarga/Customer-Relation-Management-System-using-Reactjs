@@ -344,6 +344,7 @@ app.post('/subactivityedit/:id',(req,res)=>{
     )
 })
 
+//company componets
 
 app.get('/getcompanydata',(req,res)=>{
     db.query("select * from companies",
@@ -612,6 +613,75 @@ app.post('/changestatus/:id',(req,res)=>{
         res.send(result)
     }
 })
+})
+
+//leads componet
+
+app.get('/getleaddata',(req,res)=>{
+    db.query("select * from leads",
+    (err,result)=>{
+        if(err){
+            console.log(err)
+        }else{
+            res.send(result)
+        }
+    }
+    )
+})
+
+app.post('/addleads',(req,res)=>{
+    const leadname = req.body.leadname
+    const leadtitle = req.body.leadtitle
+    const leadcompany= req.body.leadcompany
+    const leadphone = req.body.leadphone
+    const leademail = req.body.leademail
+    const lead_status = req.body.lead_status
+    const leadcreate =  req.body.leadcreate
+    const leadowner = req.body.leadowner
+    db.query("insert into leads (Name,Title,company,phone,email,lead_status,Lead_created,Lead_owner) values(?,?,?,?,?,?,?,?)",[leadname,leadtitle,leadcompany,leadphone,leademail,lead_status,leadcreate,leadowner],
+    (err,result)=>{
+        if (err){
+            console.log(err)
+        }
+        else{
+            res.send(result)
+        }
+    }
+    )
+})
+
+app.delete('/deteteleaddata',(req,res)=>{
+    const deleteId = req.body.deleteId
+    db.query("delete from leads where id = ?",[deleteId],
+    (err,result)=>{
+        if(err){
+            console.log(err)
+        }else{
+            res.send("ok")
+        }
+    }
+    )
+})
+
+app.post('/subleadedit/:id',(req,res)=>{
+    const accountID = parseInt(req.params.id)
+    const leadname = req.body.leadname
+    const leadtitle = req.body.leadtitle
+    const leadcompany= req.body.leadcompany
+    const leadphone = req.body.leadphone
+    const leademail = req.body.leademail
+    const lead_status = req.body.lead_status
+    const leadcreate =  req.body.leadcreate
+    const leadowner = req.body.leadowner
+    db.query("update leads set Name = ?, Title = ?, company = ?, phone = ?, email = ?,  lead_status = ?, Lead_created = ? , Lead_owner = ?  where id = ? ",[leadname,leadtitle,leadcompany,leadphone,leademail,lead_status,leadcreate,leadowner,accountID],
+    (err,result)=>{
+        if(err){
+            console.log(err)
+        }else{
+            res.send(result)
+        }
+    }
+    )
 })
 
 

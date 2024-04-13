@@ -15,8 +15,8 @@ import {
   AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
-import mainbackground from "./mainbackground.jpg"
-import crmimage from "./crm.jpg"
+import mainbackground from "./Loginimages/mainbackground.jpg"
+import crmimage from "./Loginimages/crm.jpg"
 import Type from "./Type";
 import { TfiMenu } from "react-icons/tfi";
 import { RxCross2 } from "react-icons/rx";

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import { PiFinnTheHumanFill } from "react-icons/pi";
+import { CgBoy } from "react-icons/cg";
+
 
 const Contacts = () => {
   const [userData, setUserdata] = useState([]);
@@ -86,6 +88,12 @@ const Contacts = () => {
   };
   return (
     <div className="main-table">
+            <div className='company-logo'>
+    <div className='company-main'>
+    <div><CgBoy  className="logo0" /></div>
+    <div style={{marginTop:"19px"}}><h5>Customers</h5></div>
+  </div>
+    </div>
       <div className="table-2">
         <h3>
           <PiFinnTheHumanFill />

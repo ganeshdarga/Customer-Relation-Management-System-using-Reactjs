@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Axios from "axios";
 import { SiStatuspal } from "react-icons/si";
 import { RiPassPendingLine } from "react-icons/ri";
+import { FaIdeal } from "react-icons/fa";
 
 const DealTickets = () => {
   const [closedStatus, SetClosedStatus] = useState("active");
@@ -46,6 +47,12 @@ const DealTickets = () => {
   return (
     <>
       <div className="tickets-container">
+      <div className='company-logo'>
+    <div className='company-main'>
+    <div><FaIdeal className="logo0" /></div>
+    <div style={{marginTop:"19px"}}><h5>Deal Tickets</h5></div>
+  </div>
+    </div>
         <div className="closed-status1">
           <h4 className="closed-status" onClick={ckeckclosedstatus}>
             Check Closed Deals

@@ -1,7 +1,7 @@
 
 import { useState,useEffect } from 'react'
 import Axios from 'axios'
-import profile from './profile.jpg'
+import profile from './usercom_pictures/profile.jpg'
 
 
 
